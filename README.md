@@ -1,2 +1,2 @@
 # CS5004
-Course
+Course repository
