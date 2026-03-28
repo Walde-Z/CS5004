@@ -39,9 +39,13 @@ public class CSVParser {
 
     String line;
     while ((line = reader.readLine()) != null) {
-      String[] values = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
-      HashMap<String, String> row = new HashMap<>();
+      if (line.trim().isEmpty()) continue;
 
+      String[] values = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
+
+      if (values.length != headers.length) continue;
+
+      HashMap<String, String> row = new HashMap<>();
       for (int i = 0; i < headers.length; i++) {
         row.put(headers[i], values[i].replace("\"", ""));
       }

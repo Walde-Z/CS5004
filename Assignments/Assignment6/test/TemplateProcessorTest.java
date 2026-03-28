@@ -1,5 +1,4 @@
 import static org.junit.jupiter.api.Assertions.*;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
